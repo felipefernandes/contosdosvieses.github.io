@@ -19,6 +19,10 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
 
 /* Estilização global */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: rgb(224, 224, 224);
@@ -34,75 +38,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Estilos para editores (Quill) */
-.ql-container {
-  font-size: 13px;
-  margin: 0;
-  position: relative;
-}
-
-.ql-editor {
-  line-height: 1.42;
-  outline: none;
-  overflow-y: auto;
-  padding: 12px 15px;
-  tab-size: 4;
-  text-align: left;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.ql-editor p,
-.ql-editor ol,
-.ql-editor ul {
-  margin: 0;
-  padding: 0;
-  counter-reset: list-1;
-}
-
-.ql-editor ol li:before {
-  content: counter(list-0, decimal) '.';
-}
-
-.ql-editor .ql-align-center {
-  text-align: center;
-}
-
-.ql-editor .ql-align-justify {
-  text-align: justify;
-}
-
-.ql-editor .ql-align-right {
-  text-align: right;
-}
-
-/* Estilos responsivos */
-@media only screen and (min-width: 601px) {
-  .section_S {
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .section_S>.container {
-    max-width: 940px;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 30px 0;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .section_S>.container {
-    max-width: 940px;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 30px;
-  }
 }
 
 /* Botões */
@@ -122,55 +57,6 @@ a:hover {
 .button:hover {
   background: #DC9335;
 }
-
-/* Imagens responsivas */
-.image_W img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Tipografias adicionais */
-.ql-font-roboto {
-  font-family: 'Roboto', sans-serif !important;
-}
-
-.ql-font-helvetica {
-  font-family: 'Helvetica', sans-serif !important;
-}
-
-.ql-font-lilitaone {
-  font-family: 'Lilita One', cursive !important;
-}
-
-.ql-font-lato {
-  font-family: 'Lato', sans-serif !important;
-}
-
-.ql-font-mulish {
-  font-family: 'Mulish', sans-serif !important;
-}
-
-.ql-font-nunito {
-  font-family: 'Nunito', sans-serif !important;
-}
-
-.ql-font-staatliches {
-  font-family: 'Staatliches', cursive !important;
-}
-
-.ql-font-quicksand {
-  font-family: 'Quicksand', sans-serif !important;
-}
-
-.ql-font-lora {
-  font-family: 'Lora', serif !important;
-}
-
-.ql-font-vollkorn {
-  font-family: 'Vollkorn', serif !important;
-}
-
 
 h2,
 h3 {
@@ -201,6 +87,14 @@ h2 {
   display: block;
 }
 
+.column {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+/* Hero */
+
 #hero {
   display: flex;
   justify-self: center;
@@ -212,36 +106,6 @@ h2 {
 #hero p {
   padding: 0;
 }
-
-#beneficios {
-  display: flex;
-  justify-self: center;
-  background-image: url('/assets/images/layout-v1_04.jpg'), linear-gradient(#E0D1D100, #E0D1D100);
-  /* background-position-y: 95%; */
-  order: 0;
-  background-position: 0px 9px;
-  padding-bottom: 15px;
-}
-
-#beneficios .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-
-/* #beneficios .content {
-  max-width: 415px;
-  padding-right: 30px;
-} */
-
-#beneficios .container img {
-  margin-top: 5%;
-}
-
-#beneficios .container ul {
-  margin-left: 20px;
-}
-
-
 
 #hero .container {
   max-width: 940px;
@@ -328,6 +192,33 @@ h2 {
   width: 100%;
 }
 
+/* Beneficios */
+
+#beneficios {
+  display: flex;
+  justify-self: center;
+  background-image: url('/assets/images/layout-v1_04.jpg'), linear-gradient(#E0D1D100, #E0D1D100);
+  /* background-position-y: 95%; */
+  order: 0;
+  background-position: 0px 9px;
+  padding-bottom: 15px;
+}
+
+#beneficios .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+#beneficios .container img {
+  margin-top: 5%;
+}
+
+#beneficios .container ul {
+  margin-left: 20px;
+}
+
+/* Onde Comprar? */
+
 #onde-comprar {
   padding-bottom: 120px;
 }
@@ -358,6 +249,8 @@ h2 {
   width: 100%;
 }
 
+/* Footer */
+
 footer {
   display: flex;
   align-content: center;
@@ -375,6 +268,8 @@ footer p {
   font-size: 0.75rem;
   padding-bottom: 20px;
 }
+
+/* Responsivos */
 
 @media only screen and (min-width: 601px) {
   .container {
@@ -401,14 +296,6 @@ footer p {
     background-position: center;
   }
 }
-
-.column {
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-}
-
-
 
 .literata {
   font-family: "Literata", serif;
