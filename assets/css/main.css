@@ -248,6 +248,7 @@ h2 {
   padding: 30px 0;
   line-height: normal;
   padding: 0;
+  align-items: center;
 }
 
 #hero .title_block {
@@ -337,12 +338,15 @@ h2 {
 }
 .canais-de-venda {
   display: flex;
+  flex-wrap: wrap;
 }
 .canais-de-venda .canal {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 60px;
+  margin-bottom: 30px;
+  max-width: 140px;
   align-content: center;
 
 }
@@ -350,7 +354,8 @@ h2 {
 .canais-de-venda .canal img {
   display: block;
   width: initial;
-  height: 55px;
+  
+  width: 100%;
 }
 
 footer {
@@ -398,8 +403,9 @@ footer p {
 }
 
 .column {
-  display: inline-block;
-  width: 470px;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
 }
 
 
