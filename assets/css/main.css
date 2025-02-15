@@ -11,6 +11,13 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
 
+.literata {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 /* Estilização global */
 html {
   scroll-behavior: smooth;
@@ -33,24 +40,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Botões */
-.button {
-  display: flex;
-  text-decoration: none;
-  text-align: center;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 15px 30px;
-  background: #C3641E;
-  color: white;
-  font-size: 24px;
-  transition: all .2s;
-}
-
-.button:hover {
-  background: #DC9335;
-}
-
 h2,
 h3 {
   padding-bottom: 15px;
@@ -67,6 +56,8 @@ h2 {
 }
 
 .section {
+  display: flex;
+  justify-content: center;
   width: 100%;
   position: relative;
   background-size: cover;
@@ -77,23 +68,18 @@ h2 {
 
 .container img {
   width: 100%;
-  display: block;
-}
-
-.column {
   display: flex;
-  width: 50%;
-  flex-direction: column;
 }
 
 /* Hero */
 
 #hero {
-  display: flex;
+  justify-content: center;
   justify-self: center;
   background-image: url(//static-cdn.myedools.com/org-748561/school-742122/f3014f86-7094-4252-b4cb-2ef8d0336ac9/assets/939a39c2-25b2-4654-a622-9f218a6bdbcc.jpg), linear-gradient(#E0D1D100, #E0D1D100);
   background-position-y: 95%;
   order: 0;
+  
 }
 
 #hero p {
@@ -101,7 +87,6 @@ h2 {
 }
 
 #hero .container {
-  max-width: 940px;
   padding: 30px 0;
   line-height: normal;
   padding: 0;
@@ -117,7 +102,7 @@ h2 {
 }
 
 #hero .title_block .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 #hero .content {
@@ -136,25 +121,16 @@ h2 {
 }
 
 #hero-cta .button {
+  display: inline-block;
   text-decoration: none;
-  transition: all .2s;
-  cursor: pointer;
   text-align: center;
-  box-sizing: content-box;
-  border: 1px solid #00CFD600;
+  border: 1px solid transparent;
   border-radius: 5px;
-  padding-top: 15px;
-  padding-right: 30px;
-  padding-bottom: 15px;
-  padding-left: 30px;
-  background: #C3641EFF;
+  padding: 15px 30px;
+  background: #C3641E;
   color: white;
-  line-height: 24px;
   font-size: 24px;
-  min-width: 24px;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
+  transition: all .2s;
 }
 
 #hero-cta small {
@@ -264,20 +240,29 @@ footer p {
 
 /* Responsivos */
 
-@media only screen and (min-width: 601px) {
+/* MOBILE (até 768px) */
+@media screen and (max-width: 768px) {
   .container {
-    max-width: 940px;
-    align-items: flex-start;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    max-width: 940px;
+    align-items: center;
     width: 100%;
     margin: 0 auto;
+  }
+
+  .column {
+    width: 100%;
+    padding: 0 30px;
   }
 
   .title_block {
     display: flex;
     background-image: linear-gradient(transparent, transparent);
-    width: calc(100.00% - 0px);
+    
     align-self: center;
     justify-self: center;
     order: 0;
@@ -287,12 +272,69 @@ footer p {
     box-sizing: border-box;
     background-size: cover;
     background-position: center;
+    width: 100%;
   }
+
+  #hero {
+    padding-top: 20px;
+  }
+
+  #hero .title_block h1 {
+    font-size: 3rem;
+    line-height: 2.8rem;
+    padding-bottom: 10px;
+  }
+
+  #hero .title_block .subtitle {
+    font-size: 1.1rem;
+  }
+
+  #hero-cta a {
+    margin-bottom: 30px;
+  }
+
+  #sobre-livro .conten,
+  #onde-comprar .container {
+    padding: 0 30px;
+  }
+
+  #onde-comprar .canal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    max-width: 140px;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
 }
 
-.literata {
-  font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+/* 🔹 DESKTOP (acima de 768px) */
+@media screen and (min-width: 769px) {
+  .container {
+    display: flex;
+    max-width: 940px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .column:first-child {
+    margin-right: 30px;
+  }
+
+  .canais-de-venda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .canais-de-venda .canal {
+    max-width: 140px;
+    /* margin-right: 60px;  */
+  }
 }
